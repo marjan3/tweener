@@ -1,6 +1,6 @@
 {
   "name": "@mtanevski/tweener",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny library for animating javascript objects in the browser using tween technology",
   "private": false,
   "scripts": {
@@ -9,8 +9,10 @@
     "serve": "webpack-dev-server --config webpack.dev.js",
     "build:prod": "rm -rf dist/ && webpack -p --config webpack.prod.js"
   },
+  "main": "dist/main.js",
+  "types": "dist/src/",
   "files": [
-    "/dist/**/*"
+    "/dist/src/*"
   ],
   "keywords": [
     "small",
