@@ -3,16 +3,9 @@ import { Updater, UPDATE_FUNC } from "./Tweener";
 export default class FixedUpdater implements Updater {
   private functions: Function[];
   private lastRender: number;
-  private _minFPS = 1000 / 60;
+  public minFPS = 1000 / 60;
 
   private readonly loop: FrameRequestCallback;
-
-  get minFPS(): number {
-    return this._minFPS;
-  }
-  set minFPS(value: number) {
-    this._minFPS = value;
-  }
 
   constructor() {
     this.functions = [];
