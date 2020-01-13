@@ -8,6 +8,7 @@ Tiny library for animating javascript objects in the browser using tween technol
 
 ## Built with:
 
+- webpack
 - typescript
 
 ## Requirements
