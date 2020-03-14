@@ -1,6 +1,6 @@
 {
   "name": "@mtanevski/tweener",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "Tiny library for animating javascript objects in the browser using tween technology",
   "private": false,
   "scripts": {
