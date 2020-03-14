@@ -1,4 +1,4 @@
-# Tweener
+# 🏍Tweener
 Tiny library for animating javascript objects in the browser using tween technology. Supports:
 - Promise-based tween
 - Updater can be changed (also Tweener provides own updater function)
