@@ -1,4 +1,4 @@
-# 🏍Tweener ![Publish](https://github.com/Tanevski3/tweener/workflows/Publish/badge.svg?branch=master)
+# Tweener 🏍 ![Publish](https://github.com/Tanevski3/tweener/workflows/Publish/badge.svg?branch=master)
 Tiny library for animating javascript objects in the browser using tween technology. Supports:
 - Promise-based tween
 - Updater can be changed (also Tweener provides own updater function)
