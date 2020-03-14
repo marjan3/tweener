@@ -1,4 +1,4 @@
-import FixedUpdater from "./FixedUpdater";
+import FixedUpdater from './FixedUpdater';
 
 /**
  * This is the starting point of using the tweener.
@@ -33,6 +33,8 @@ import FixedUpdater from "./FixedUpdater";
  * tw.new()
  *   .tween(obj4, obj4["rotation"], targetRotation, t, Ease.backin(0.6))
  * .start();
+ *
+ * Additionally, each tween can be stopped, paused or restarted.
  */
 export class Tweener {
   private readonly updater: Updater;
@@ -211,23 +213,27 @@ export class Tweening {
 
         if (t.time === null || t.time === undefined || t.time < 0) {
           throw Error(
-            "time of tween must not be null, undefined or less than zero"
+            'time of tween must not be null, undefined or less than zero'
           );
         }
 
         t.time += this.updater.minFPS;
 
-        const phase = Math.min(1, t["time"] / t.duration);
+        const phase = Math.min(1, t['time'] / t.duration);
 
         if (
-          typeof t.object[t.property] === "number" ||
-          typeof t.object[t.property] === "string"
+          typeof t.object[t.property] === 'number' ||
+          typeof t.object[t.property] === 'string'
         ) {
           t.object[t.property] = t.set(
-            linearInterpolation(t.initialValue, t.finalValue as number, t.easing(phase))
+            linearInterpolation(
+              t.initialValue,
+              t.finalValue as number,
+              t.easing(phase)
+            )
           );
         } else {
-          throw Error("Can not interpolate a property that is not a number");
+          throw Error('Can not interpolate a property that is not a number');
         }
 
         if (t.onChange) {
@@ -260,7 +266,7 @@ export class Tweening {
     } else {
       if (tweenOption.time < 0) {
         throw Error(
-          "Can not start a tween in the past. Time travel not allowed"
+          'Can not start a tween in the past. Time travel not allowed'
         );
       }
     }
