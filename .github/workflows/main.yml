@@ -26,8 +26,10 @@ jobs:
         git config --global user.name "Tanevski"
           
     - name: Bump version
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
         yarn version --new-version ${GITHUB_REF#"refs/tags/"}
-        git push https://${{secrets.GPR_TOKEN}}@github.com/Tanevski3/tweener
+        git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
     - name: Publish
       run: yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
